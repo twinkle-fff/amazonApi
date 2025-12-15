@@ -32,7 +32,7 @@ enum SubCondition: string
     case MINT = 'mint';
 
     /** 非常に良い */
-    case VERY_GOOD = 'very good';
+    case VERY_GOOD = 'very_good';
 
     /** 良い */
     case GOOD = 'good';
@@ -53,13 +53,13 @@ enum SubCondition: string
     case WARRANTY = 'warranty';
 
     /** 再生品（保証付き） */
-    case REFURBISHED_WARRANTY = 'refurbished warranty';
+    case REFURBISHED_WARRANTY = 'refurbished_warranty';
 
     /** 再生品 */
     case REFURBISHED = 'refurbished';
 
     /** 開封済み未使用品 */
-    case OPEN_BOX = 'open box';
+    case OPEN_BOX = 'open_box';
 
     /** その他 */
     case OTHER = 'other';

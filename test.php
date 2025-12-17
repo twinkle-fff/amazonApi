@@ -1,17 +1,19 @@
 <?php
 
-use AmazonApi\Infrastructure\SpApi\CartApi\CartApi;
+use AmazonApi\Infrastructure\SpApi\CatalogApi\CatalogApi;
+use AmazonApi\Infrastructure\SpApi\CatalogApi\DataTransferObject\Request\CatalogRequest;
+use AmazonApi\Infrastructure\SpApi\CatalogApi\Enum\IncludedData;
+
 require_once __DIR__."/vendor/autoload.php";
 
+$CAPI = new CatalogApi();
 
+$creq = CatalogRequest::empty();
+$creq->setIncludedData(
+    IncludedData::cases()
+);
 
-$ca = new CartApi();
-$file = fopen("./testAsin.csv","r");
-
-
-while($line  = fgets($file)){
-    $line = trim($line);
-    fwrite(STDERR,$line.PHP_EOL);
-    $res = $ca->getCartData($line);
-    echo json_encode($res,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+$rs = $CAPI->searchByKeyword("鏡餅",$creq);
+foreach($rs as $r){
+    die (json_encode($r,384));
 }

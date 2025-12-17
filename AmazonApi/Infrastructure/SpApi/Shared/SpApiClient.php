@@ -39,7 +39,7 @@ class SpApiClient
     /**
      * APIリクエストを送信する（429 の場合は指数バックオフ, 403 の場合はトークン再取得）
      */
-    public function request(string $uri, array|HttpParams $params, bool $isPost = false): array
+    public function request(string $uri, array|HttpParams $params, RequestType $requestType = RequestType::GET): array
     {
         $uri = self::AMAZON_JP_ENDPOINT.$uri;
         $attempt = 0;  // 試行回数
@@ -52,10 +52,7 @@ class SpApiClient
         while ($attempt < 10) {
             try {
                 // HTTPリクエスト送信
-                $response = $isPost
-                    ? self::$httpClient->request(RequestType::POST,$uri,   $params,ContentType::JSON,$headers)
-                    : self::$httpClient->request(RequestType::GET,$uri,   $params,ContentType::JSON,$headers);
-
+                $response = self::$httpClient->request($requestType,$uri,   $params,ContentType::JSON,$headers);
                 $httpStatus = $response->code();
 
                 // 429: 頻度制限エラー → 再試行

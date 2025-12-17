@@ -1,6 +1,6 @@
 {
     "name": "keisukesaichi/amazon-api",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "license": "MIT",
     "require": {
         "keisukesaichi/http-client": "^1.0",

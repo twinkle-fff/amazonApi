@@ -10,6 +10,12 @@ readonly class ItemSalesRank extends BaseRespopnseObject{
         "displayGroupRanks"=>ItemDisplayGroupSalesRank::class
     ];
 
+    /**
+     * Summary of __construct
+     * @param string $marketplaceId
+     * @param ItemClassificationSalesRank[] $classificationRanks
+     * @param ItemDisplayGroupSalesRank[] $displayGroupRanks
+     */
     public function __construct(
         public string $marketplaceId,
         public ?array $classificationRanks,

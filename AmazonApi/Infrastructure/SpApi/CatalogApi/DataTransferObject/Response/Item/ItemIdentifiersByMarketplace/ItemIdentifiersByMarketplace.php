@@ -9,6 +9,11 @@ readonly class ItemIdentifiersByMarketplace extends BaseRespopnseObject{
         "identifiers"=>ItemIdentifier::class
     ];
 
+    /**
+     * Summary of __construct
+     * @param string $marketplaceId
+     * @param ItemIdentifier[] $identifiers
+     */
     public function __construct(
         public string $marketplaceId,
         public array $identifiers

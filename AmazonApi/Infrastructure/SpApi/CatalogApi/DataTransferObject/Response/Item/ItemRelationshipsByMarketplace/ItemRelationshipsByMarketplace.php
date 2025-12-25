@@ -10,6 +10,11 @@ readonly class ItemRelationshipsByMarketplace extends BaseRespopnseObject{
         "relationships"=>ItemRelationship::class
     ];
 
+    /**
+     * Summary of __construct
+     * @param string $marketplaceId
+     * @param ItemRelationship[] $relationships
+     */
     public function __construct(
         public string $marketplaceId,
         public array $relationships,

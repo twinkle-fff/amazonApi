@@ -9,6 +9,11 @@ readonly class ItemImagesByMarketplace extends BaseRespopnseObject{
         "images"=>ItemImage::class
     ];
 
+    /**
+     * Summary of __construct
+     * @param string $marketplaceId
+     * @param ItemImage[] $images
+     */
     public function __construct(
         public string $marketplaceId,
         public array $images

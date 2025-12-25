@@ -6,6 +6,13 @@ use AmazonApi\Infrastructure\SpApi\CatalogApi\DataTransferObject\Response\Item\I
 use AmazonApi\Infrastructure\SpApi\Shared\DataTransfarObject\BaseRespopnseObject;
 
 readonly class Dimensions extends BaseRespopnseObject{
+    /**
+     * Summary of __construct
+     * @param LengthDimension $height
+     * @param LengthDimension $length
+     * @param LengthDimension $weight
+     * @param WeightDimension $width
+     */
     public function __construct(
         public LengthDimension $height,
         public LengthDimension $length,

@@ -8,6 +8,11 @@ readonly class Refinements extends BaseRespopnseObject{
         "brands"=>BrandRefinement::class,
         "classifications"=>ClassificationRefinement::class
     ];
+    /**
+     * Summary of __construct
+     * @param BrandRefinement[] $brands
+     * @param ClassificationRefinement[] $classifications
+     */
     public function __construct(
         public array $brands,
         public array $classifications
